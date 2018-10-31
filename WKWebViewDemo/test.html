@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>WKWebView使用Demo</h1>
+<p id="test">默认显示内容</p>
+
+<script>
+    function clickBtn(){
+        document.getElementById("test").innerHTML="OC修改了默认内容";
+     }
+</script>
+
+ <script>
+    function alertMessage(message) {
+        alert(message);
+    }
+</script>
+
+<script>
+    function callOC(){
+        window.webkit.messageHandlers.callOC.postMessage('JS call OC');
+     }
+</script>
+
+<button type="button" onclick="callOC()">Call OC</button>
+
+</body>
+</html>
